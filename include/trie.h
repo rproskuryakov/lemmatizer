@@ -4,6 +4,7 @@
 
 using namespace std;
 
+struct Node {};
 
 class Trie {
 private:
