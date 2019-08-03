@@ -4,8 +4,6 @@
 #include "trie.h"
 using namespace std;
 
-
-
 struct Node {
 	map<char, struct Node*> children;
 	char letter;
