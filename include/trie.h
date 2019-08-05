@@ -2,15 +2,21 @@
 #include <string>
 #include <map>
 
-using namespace std;
 
-struct Node {};
+typedef struct Node {
+    std::map<char, struct Node*> children;
+    char letter;
+    bool is_end_of_word = false;
+} Node;
+
 
 class Trie {
 private:
-	struct Node root;
+    Node* root;
 public:
-	void add_word(string word);
+    Trie ();
 
-	bool find(string word);
+	void add_word(std::string word);
+
+	bool find(std::string word);
 };
