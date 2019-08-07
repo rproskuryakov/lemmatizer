@@ -2,7 +2,7 @@ from distutils.core import setup, Extension
 from Cython.Build import cythonize
 
 extension = Extension("pytrie",  # name of extension
-                      sources = ["cython/pytrie.pyx"],  # filename of our Cython source
+                      sources = ["wrapper/pytrie.pyx"],  # filename of our Cython source
                       language="c++",  # this causes Cython to create c++ source
                       include_dirs=['include/', 'src/']
                       )
