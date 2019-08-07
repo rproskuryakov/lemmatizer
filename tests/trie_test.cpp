@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "trie.h"
+#include "Trie.h"
 #include <iostream>
 #include <vector>
 #include <string>

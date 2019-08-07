@@ -2,3 +2,8 @@ cmake-build-debug/
 build/
 venv/
 ./idea
+TODO.md
+lib/
+pytrie.cpp
+__pycache__/
+.idea/
