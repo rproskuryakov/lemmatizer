@@ -13,8 +13,12 @@ typedef struct Node {
 class Trie {
 private:
     Node* root;
+
+    //void destroy_recursive(Node* node);
 public:
     Trie ();
+
+    //~Trie();
 
 	void add_word(std::string word);
 

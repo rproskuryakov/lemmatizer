@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include "trie.h"
+#include "Trie.h"
 
 
 // constructor
