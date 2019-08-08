@@ -10,7 +10,11 @@ cdef class PyTrie:
         self.c_tree = Trie()
 
     def add_word(self, word): # word is a python string
-        return self.c_tree.add_word(word) # word is a c++ string
+        if isinstance(word, str): # Python3 version - use unicode for Python 2
+            word = word.encode()
+        return self.c_tree.add_word(word)
 
     def find(self, word): # word is a python string
+        if isinstance(word, str): # Python3 version - use unicode for Python 2
+            word = word.encode()
         return self.c_tree.find(word)
