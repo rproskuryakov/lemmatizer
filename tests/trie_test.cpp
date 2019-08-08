@@ -8,7 +8,7 @@
 
 TEST(TestTrieSuite, TestIsStringsInTrie)
 {
-    std::vector<std::string> corpus = {"привет", "пока", "голова", "притча"};
+    std::vector<std::string> corpus = {"привет", "пока", "голова", "притча", "приве"};
     int corpus_size = corpus.size();
     Trie TestTrie;
     for (int i = 0; i < corpus_size; ++i) {
@@ -24,7 +24,7 @@ TEST(TestTrieSuite, TestIsStringsInTrie)
 
 
 TEST(TestTrieSuite, TestIsStringsNotInTrie) {
-    std::vector<std::string> corpus = {"привет", "пока", "голова", "притча"};
+    std::vector<std::string> corpus = {"привет", "пока", "голова", "притча", "приве"};
 
     int corpus_size = corpus.size();
     Trie TestTrie;
@@ -34,11 +34,16 @@ TEST(TestTrieSuite, TestIsStringsNotInTrie) {
         TestTrie.add_word(word);
     }
 
-    ASSERT_EQ(false, TestTrie.find("при"));
-    ASSERT_EQ(false, TestTrie.find("приве"));
+    ASSERT_EQ(false, TestTrie.find("прив"));
+    ASSERT_EQ(false, TestTrie.find("привета"));
     ASSERT_EQ(false, TestTrie.find("пок"));
+    ASSERT_EQ(false, TestTrie.find(""));
     ASSERT_EQ(false, TestTrie.find("прит"));
     ASSERT_EQ(false, TestTrie.find("притч"));
+    ASSERT_EQ(false, TestTrie.find("прива"));
+    ASSERT_EQ(false, TestTrie.find("поке"));
+    ASSERT_EQ(false, TestTrie.find("притче"));
+    ASSERT_EQ(false, TestTrie.find("покемон"));
 }
 
 
